@@ -102,3 +102,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Wallpaper
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.wallpapers_loc_request_suw=true
+
+# Enable one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
