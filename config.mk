@@ -24,35 +24,34 @@ PRODUCT_PACKAGES += \
     AccentPixelBlue
 
 # Apps
-PRODUCT_PACKAGES += \
-    Flipendo \
+ PRODUCT_PACKAGES += \
     NexusLauncherRelease \
     ThemePicker \
     WallpaperPickerGoogleRelease
 
 # Bootanimation
 ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
-     PRODUCT_COPY_FILES += vendor/conquerui/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+     PRODUCT_COPY_FILES += vendor/halcyonui/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
-     PRODUCT_COPY_FILES += vendor/conquerui/bootanimation/bootanimation_1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+     PRODUCT_COPY_FILES += vendor/halcyonui/bootanimation/bootanimation_1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
-     PRODUCT_COPY_FILES += vendor/conquerui/bootanimation/bootanimation_720.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+     PRODUCT_COPY_FILES += vendor/halcyonui/bootanimation/bootanimation_720.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else
     ifeq ($(TARGET_BOOT_ANIMATION_RES),)
-        $(warning "ConquerUI: TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
+        $(warning "halcyonUI: TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
     else
-        $(warning "ConquerUI: Current bootanimation res is not supported, forcing 1080p")
+        $(warning "halcyonUI: Current bootanimation res is not supported, forcing 1080p")
     endif
-    PRODUCT_COPY_FILES += vendor/conquerui/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+    PRODUCT_COPY_FILES += vendor/halcyonui/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
 
 # Config Files
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/conquerui/etc,$(TARGET_COPY_OUT_SYSTEM_EXT)/etc)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,vendor/halcyonui/etc,$(TARGET_COPY_OUT_SYSTEM_EXT)/etc)
 
 # Fonts
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/conquerui/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
-    vendor/conquerui/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+    $(call find-copy-subdir-files,*,vendor/halcyonui/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+    vendor/halcyonui/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
 PRODUCT_PACKAGES += \
     FontArbutus \
@@ -76,15 +75,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.theme_id=5
 
 # Navigation Bar
-PRODUCT_PACKAGES += \
-    GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium \
-    GesturalNavigationOverlayHidden
+#PRODUCT_PACKAGES += \
+#    GesturalNavigationOverlayLong \
+#    GesturalNavigationOverlayMedium \
+#    GesturalNavigationOverlayHidden
 
 # Overlays
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/conquerui/overlay
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/halcyonui/overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/conquerui/overlay/common/
+    vendor/halcyonui/overlay/common/
 
 # Power off charing resource
 PRODUCT_PACKAGES += \
@@ -98,9 +97,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.feature.show_pixel_tos=true \
     setupwizard.feature.show_support_link_in_deferred_setup=false \
     setupwizard.theme=glif_v3_light
-
-# Volume Style
-include packages/apps/VolumeStyle/plugins.mk
 
 # Wallpaper
 PRODUCT_PROPERTY_OVERRIDES += \
