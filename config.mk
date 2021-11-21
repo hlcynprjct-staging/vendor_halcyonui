@@ -26,6 +26,7 @@ PRODUCT_PACKAGES += \
 # Apps
  PRODUCT_PACKAGES += \
     NexusLauncherRelease \
+    PixelThemesStub \
     ThemePicker \
     WallpaperPickerGoogleRelease
 
