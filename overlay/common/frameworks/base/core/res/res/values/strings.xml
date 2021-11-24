@@ -2,4 +2,7 @@
 <resources>
     <string name="config_recentsComponentName">com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</string>
     <string name="config_secondaryHomePackage">com.google.android.apps.nexuslauncher</string>
+
+    <string name="android_start_title">Staring halcyon…</string>
+    <string name="android_upgrading_title">Updating halcyon…</string>
 </resources>
