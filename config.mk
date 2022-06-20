@@ -25,10 +25,7 @@ PRODUCT_PACKAGES += \
 
 # Apps
  PRODUCT_PACKAGES += \
-    NexusLauncherRelease \
-    PixelThemesStub \
-    ThemePicker \
-    WallpaperPickerGoogleRelease
+    ThemePicker
 
 # Bootanimation
 ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
@@ -74,12 +71,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.bs_theme=true \
     ro.com.google.ime.system_lm_dir=/system/product/usr/share/ime/google/d3_lms \
     ro.com.google.ime.theme_id=5
-
-# Navigation Bar
-#PRODUCT_PACKAGES += \
-#    GesturalNavigationOverlayLong \
-#    GesturalNavigationOverlayMedium \
-#    GesturalNavigationOverlayHidden
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/halcyonui/overlay
